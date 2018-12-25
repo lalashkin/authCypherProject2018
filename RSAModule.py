@@ -64,7 +64,7 @@ class RSA:
         self.n = p * q
         euler = (p - 1) * (q - 1)
         self.e = chooseE(euler)
-        gcd, x, y = xgcd(self.e, euler)
+        divisor, x, y = xgcd(self.e, euler)
 
         if x < 0:
             self.d = x + euler
@@ -84,4 +84,3 @@ class RSA:
             decrypted_char = pow(char, self.d) % self.n
             char_list.append(chr(decrypted_char))
         return char_list
-

@@ -44,4 +44,3 @@ class RC4:
 
     def decrypt(self, data, size):
         return self.encrypt(data, size)
-
