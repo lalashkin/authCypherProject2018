@@ -58,8 +58,8 @@ class RSA:
     def get_keys(self):
         primes = get_primes(2, 1000)
 
-        p = primes[random.randint(100, len(primes))]
-        q = primes[random.randint(100, len(primes))]
+        p = primes[random.randint(100, len(primes) - 1)]
+        q = primes[random.randint(100, len(primes) - 1)]
 
         self.n = p * q
         euler = (p - 1) * (q - 1)

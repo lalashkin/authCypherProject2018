@@ -65,11 +65,12 @@ def test_3DES_EDE():
 
     assert plaintext2 == decypher2, "Plaintext should be equal: " + plaintext2
 
-    key3 = "Pssst!"
-    plaintext3 = "It's free real estate!"
-    des3 = DES(key3)
-    cypher3 = des3.DES_encrypt(plaintext3)
-    decypher3 = convert_from_bin(''.join(des3.DES_decrypt(cypher3)), des3.msg_indices)
+    keys3 = ["How", 'become', "a"]
+    plaintext3 = "Millionaire!"
+    des3 = DES3(keys3)
+    cypher3 = des3.DES3_encrypt(plaintext3)
+    decypher3 = convert_from_bin(''.join(des3.DES3_decrypt(cypher3)), des3.msg_indices)
+    print("Key:", keys3)
     print("Encrypted bits: " + ''.join(cypher3))
     print("Decrypted text: " + decypher3, "\n")
 
